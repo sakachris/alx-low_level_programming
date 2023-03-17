@@ -13,5 +13,6 @@ int main(void)
 	/* putchar alphabets from a to z */
 	for (c = 'a'; c <= 'z'; c++)
 	putchar(c);
+	"\n";
 	return (0);
 }
