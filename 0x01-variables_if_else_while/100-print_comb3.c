@@ -8,17 +8,23 @@
  */
 int main(void)
 {
-	int i;
+	int num, num2;
 
-	/* putchar numbers 00 to 89 */
-	for (i = 1; i <= 89; i++)
+	for (num = 0; num < 10; num++)
 	{
-		putchar(i / 10 + '0');
-		putchar(i % 10 + '0');
-		if (i < 89)
+		for (num2 = 0; num2 < 10; num2++)
 		{
-			putchar(',');
-			putchar(' ');
+			if (num != num2 && num < num2)
+			{
+				putchar((num % 10) + '0');
+				putchar((num2 % 10) + '0');
+
+				if (num < 8 && num2 <= 9)
+
+				putchar(',');
+				putchar(' ');
+
+			}
 		}
 	}
 	putchar('\n');
