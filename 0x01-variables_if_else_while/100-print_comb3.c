@@ -20,9 +20,10 @@ int main(void)
 				putchar((num2 % 10) + '0');
 
 				if (num <= 7 && num2 <= 9)
-
-				putchar(',');
-				putchar(' ');
+				{
+					putchar(',');
+					putchar(' ');
+				}
 
 			}
 		}
