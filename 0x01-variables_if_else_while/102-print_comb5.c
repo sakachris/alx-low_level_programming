@@ -8,33 +8,27 @@
  */
 int main(void)
 {
-	int n, n2, n3, n4;
+	int num, num2;
 
-	for (n = 0; n < 10; n++)
+	for (num = 0; num < 100; num++)
 	{
-		for (n2 = 0; n2 < 10; n2++)
+		for (num2 = 0; num2 < 100; num2++)
 		{
-			for (n3 = 0; n3 < 10; n3++)
+			if (num < num2)
 			{
-				for (n4 = 0; n4 < 10; n4++)
+				putchar((num / 10) + '0');
+				putchar((num % 10) + '0');
+				putchar(' ');
+				putchar((num2 / 10) + '0');
+				putchar((num2 % 10) + '0');
+
+				if (num < 98)
 				{
-					if ((n + n2) < (n3 + n4) && n <= n3)
-					{
-						putchar((n % 10) + '0');
-						putchar((n2 % 10) + '0');
-						putchar(' ');
-						putchar((n3 % 10) + '0');
-						putchar((n4 % 10) + '0');
-
-						putchar(',');
-						putchar(' ');
-
-					}
-
+					putchar(',');
+					putchar(' ');
 				}
 
 			}
-
 		}
 	}
 	putchar('\n');
