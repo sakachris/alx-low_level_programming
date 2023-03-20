@@ -18,7 +18,7 @@ int main(void)
 			{
 				for (n4 = 0; n4 < 10; n4++)
 				{
-					if (n <= n3 && n2 < n4)
+					if ((n + n2) < (n3 + n4) && n <= n3)
 					{
 						putchar((n % 10) + '0');
 						putchar((n2 % 10) + '0');
