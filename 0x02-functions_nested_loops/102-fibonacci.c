@@ -15,7 +15,7 @@ int main(void)
 
 	for (i = 5; i <= 50; i++)
 	{
-		printf("%d, ", nn);
+		printf("%u, ", nn);
 		n1 = n2;
 		n2 = nn;
 		nn = n1 + n2;
