@@ -8,14 +8,14 @@
 int main(void)
 {
 	int i;
-	int n1 = 1, n2 = 2;
-	int nn = n1 + n2;
+	long unsigned int n1 = 1, n2 = 2;
+	long unsigned int nn = n1 + n2;
 
-	printf("%d, %d, ", n1, n2);
+	printf("%lu, %lu, ", n1, n2);
 
-	for (i = 5; i <= 50; i++)
+	for (i = 5; i <= 52; i++)
 	{
-		printf("%u, ", nn);
+		printf("%lu, ", nn);
 		n1 = n2;
 		n2 = nn;
 		nn = n1 + n2;
