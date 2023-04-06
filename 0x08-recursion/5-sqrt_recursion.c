@@ -40,6 +40,6 @@ int square_root(int a, int t)
 	}
 	else
 	{
-		return (square_root(a, t + 0));
+		return (square_root(a, t + 1));
 	}
 }
