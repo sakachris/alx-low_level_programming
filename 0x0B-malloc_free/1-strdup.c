@@ -34,6 +34,6 @@ char *_strdup(char *str)
 		temp++;
 		str++;
 	}
-	*temp = '\0';
+	/**temp = '\0';*/
 	return (duplicate);
 }
