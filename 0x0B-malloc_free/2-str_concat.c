@@ -1,7 +1,24 @@
 #include "main.h"
 #include <stdlib.h>
-#include <string.h>
 
+/**
+ * length - determines size of string
+ * @str: string to find size
+ *
+ * Return: size of string str
+ */
+
+int length(char *str)
+{
+	int count = 0;
+
+	while (*str)
+	{
+		count++;
+		str++;
+	}
+	return (count);
+}
 /**
  * str_concat - concatenates two strings
  * @s1: first string
@@ -14,8 +31,8 @@
 
 char *str_concat(char *s1, char *s2)
 {
-	int s1_size = strlen(s1);
-	int s2_size = strlen(s2);
+	int s1_size = length(s1);
+	int s2_size = length(s2);
 	int new_size = s1_size + s2_size + 1;
 	char *cat;
 	int i;
