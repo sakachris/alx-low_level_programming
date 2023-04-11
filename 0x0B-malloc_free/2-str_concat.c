@@ -31,14 +31,11 @@ int length(char *str)
 
 char *str_concat(char *s1, char *s2)
 {
-	int s1_size = 0;
-	int s2_size = 0;
+	int s1_size = length(s1);
+	int s2_size = length(s2);
 	int new_size = s1_size + s2_size + 1;
 	char *cat;
 	int i;
-
-	s1_size = length(s1);
-	s2_size = length(s2);
 
 	if (s1 == NULL)
 	{
