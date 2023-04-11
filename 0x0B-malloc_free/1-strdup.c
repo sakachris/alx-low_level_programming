@@ -1,6 +1,24 @@
 #include "main.h"
 #include <stdlib.h>
-#include <string.h>
+
+/**
+ * length - finds the length of a string
+ * @str: string to determine length
+ *
+ * Return: length of string
+ */
+
+int length(char *str)
+{
+	int count = 0;
+
+	while (*str)
+	{
+		count++;
+		str++;
+	}
+	return (count);
+}
 
 /**
  * _strdup - returns a pointer to a newly allocated space in memory,
@@ -21,8 +39,8 @@ char *_strdup(char *str)
 		return (NULL);
 	}
 
-	size = strlen(str);
-	duplicate = malloc(sizeof(str) * size);
+	size = length(str);
+	duplicate = malloc(sizeof(str) * size + 1);
 	if (duplicate == NULL)
 	{
 		return (NULL);
@@ -34,6 +52,6 @@ char *_strdup(char *str)
 		temp++;
 		str++;
 	}
-	/**temp = '\0';*/
+	*temp = '\0';
 	return (duplicate);
 }
