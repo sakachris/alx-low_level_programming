@@ -12,6 +12,10 @@ int length(char *str)
 {
 	int count = 0;
 
+	if (str == NULL)
+	{
+		return (0);
+	}
 	while (*str)
 	{
 		count++;
