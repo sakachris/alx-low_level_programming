@@ -35,11 +35,8 @@ int length(const char *str)
 void print_all(const char * const format, ...)
 {
 	int i = 0;
-	int in;
-	char c;
-	float f;
-	char *s;
 	int n = length(format);
+	char *s;
 	va_list print;
 
 	va_start(print, format);
@@ -49,19 +46,13 @@ void print_all(const char * const format, ...)
 		switch (format[i])
 		{
 			case 'c':
-				c = va_arg(print, int);
-
-				printf("%c", c);
+				printf("%c", va_arg(print, int));
 				break;
 			case 'i':
-				in = va_arg(print, int);
-
-				printf("%d", in);
+				printf("%d", va_arg(print, int));
 				break;
 			case 'f':
-				f = va_arg(print, double);
-
-				printf("%f", f);
+				printf("%f", va_arg(print, double));
 				break;
 			case 's':
 				s = va_arg(print, char *);
@@ -74,7 +65,8 @@ void print_all(const char * const format, ...)
 				printf("%s", s);
 				break;
 		}
-		if ((format[i] == 'c' || format[i] == 'i' || format[i] == 'f' || format[i] == 's') && i < n - 1)
+		if ((format[i] == 'c' || format[i] == 'i' || format[i] == 'f'
+					|| format[i] == 's') && i < n - 1)
 		{
 			printf(", ");
 		}
