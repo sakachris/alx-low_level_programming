@@ -55,6 +55,7 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	{
 		add->next = *head;
 		*head = add;
+		return (add);
 	}
 	else
 	{
@@ -66,5 +67,5 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 		add->next = temp->next;
 		temp->next = add;
 	}
-	return (*head);
+	return (add);
 }
