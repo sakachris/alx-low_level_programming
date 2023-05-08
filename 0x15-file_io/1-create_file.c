@@ -28,13 +28,13 @@ int create_file(const char *filename, char *text_content)
 	}
 
 	fd = open(filename, O_RDWR | O_CREAT | O_TRUNC, 00600);
-	if (!fd)
+	if (fd < 0)
 	{
 		return (-1);
 	}
 
 	writing = write(fd, text_content, count);
-	if (!writing)
+	if (writing < 0)
 	{
 		return (-1);
 	}
