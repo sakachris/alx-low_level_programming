@@ -26,8 +26,8 @@ int main(int ac, char **av)
 		exit(98);
 	}
 	fd_to = open(av[2], O_WRONLY | O_CREAT | O_TRUNC, 00664);
-	reading = read(fd_from, space, 1024);
-	if (reading > 0)
+	/* reading = read(fd_from, space, 1024); */
+	while ((reading = read(fd_from, space, 1024)) > 0)
 		writing = write(fd_to, space, reading);
 	if (writing < 0 || reading < 0)
 	{
