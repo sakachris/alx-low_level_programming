@@ -44,7 +44,7 @@ int main(int ac, char **av)
 	fd_to = open(av[2], O_WRONLY | O_CREAT | O_TRUNC | O_APPEND, 00664);
 	while ((reading = read(fd_from, space, 1024)) > 0)
 		writing = write(fd_to, space, reading);
-	if (writing < 0 || fd_to < 0)
+	if ((writing != reading) || fd_to < 0)
 	{
 		dprintf(STDERR_FILENO, "Can't write to %s\n", av[2]);
 		exit(99);
