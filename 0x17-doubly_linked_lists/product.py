@@ -2,9 +2,11 @@
 
 prod = []
 pal = []
+d = {}
 for a in range(100, 1000):
     for b in range(100, 1000):
         prod += [a * b]
+        d[a * b] = a,b
 
 for n in prod:
     temp=n
@@ -17,3 +19,4 @@ for n in prod:
         pal += [temp]
 
 print(max(pal))
+print(d[max(pal)])
