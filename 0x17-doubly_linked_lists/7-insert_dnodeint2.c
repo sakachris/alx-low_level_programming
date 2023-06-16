@@ -21,27 +21,6 @@ size_t dlistint_len(const dlistint_t *h)
 }
 
 /**
- * create_node - creates a struct node
- * @n: node's data
- *
- * Return: created node
- */
-
-dlistint_t *create_node(int n)
-{
-	dlistint_t *add;
-
-	add = malloc(sizeof(dlistint_t));
-	if (!add)
-		return (NULL);
-	add->prev = NULL;
-	add->n = n;
-	add->next = NULL;
-
-	return (add);
-}
-
-/**
  * insert_dnodeint_at_index - inserts node at given index
  * @h: pointer to first node
  * @idx: position to insert node
@@ -57,9 +36,14 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 
 	if (!h)
 		return (NULL);
-	add = create_node(n);
+	add = malloc(sizeof(dlistint_t));
+	if (!add)
+		return (NULL);
 	if (idx > size)
 		return (NULL);
+	add->prev = NULL;
+	add->n = n;
+	add->next = NULL;
 	if (*h == NULL)
 	{
 		*h = add;
