@@ -11,7 +11,7 @@
 
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	hash_node_t *hnode = NULL;
+	hash_node_t *htemp, *hnode = NULL;
 	unsigned long int i;
 	char *hvalue;
 
@@ -23,15 +23,17 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
 	if (ht->array[i] != NULL)
 	{
-		while (ht->array[i])
+		htemp = ht->array[i];
+
+		while (htemp)
 		{
-			if (strcmp(ht->array[i]->key, key) == 0)
+			if (strcmp(htemp->key, key) == 0)
 			{
-				free(ht->array[i]->value);
-				ht->array[i]->value = hvalue;
+				free(htemp->value);
+				htemp->value = hvalue;
 				return (1);
 			}
-			ht->array[i] = ht->array[i]->next;
+			htemp = htemp->next;
 		}
 	}
 
